@@ -61,9 +61,3 @@ Contributions are welcome! If you have any ideas, bug fixes, or improvements, fe
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize this README according to the specific features, technologies, and details of your BookStacks project. Include any additional sections or information that you think would be relevant and helpful for users and contributors.
-
-Remember to update the installation instructions, technologies used, and contributing guidelines with the actual details of your project. Include any relevant documentation links, references, or external resources that users may find useful.
-
-I hope this helps in creating a beautiful and descriptive README for your BookStacks repository!
