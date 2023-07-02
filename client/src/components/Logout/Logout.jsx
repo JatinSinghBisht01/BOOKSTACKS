@@ -27,6 +27,7 @@ const Logout = ()=>{
                 throw error;
             }
         }).catch((err)=>{
+            notifyError()
             console.log(err);
         })
     });

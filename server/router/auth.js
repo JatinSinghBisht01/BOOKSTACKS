@@ -115,6 +115,7 @@ router.post("/api/auth/register", (req, res)=>{
     res.send(books);
   });
 
+//book-borrow
   router.post("/api/user/borrow", Authenticate, async  (req, res) =>{
     try {
       const {bookname, author, isbn} = req.body;
@@ -136,6 +137,7 @@ router.post("/api/auth/register", (req, res)=>{
     }
   });
 
+  //book-return
   router.post("/api/user/return", Authenticate, async (req, res) => {
     try {
       const { bookname, isbn } = req.body;
@@ -160,7 +162,41 @@ router.post("/api/auth/register", (req, res)=>{
       console.log(error);
     }
   });
+
+  //most-preffered book
+  router.get('/api/books/top', async (req, res) => {
+    try {
+      const users = await User.find({});
+      const bookCounts = {};
   
+      // Count the occurrence of each book
+      users.forEach((user) => {
+        user.books.forEach((book) => {
+          const bookName = book.bookname;
+          if (bookCounts[bookName]) {
+            bookCounts[bookName] += 1;
+          } else {
+            bookCounts[bookName] = 1;
+          }
+        });
+      });
+      console.log(bookCounts)
+  
+      // Sort the books by count in descending order
+      const sortedBooks = Object.keys(bookCounts).sort(
+        (a, b) => bookCounts[b] - bookCounts[a]
+      ).map(bookName =>({bookName, count: bookCounts[bookName]}));
+  
+      // Get the top 10 books
+      const topBooks = sortedBooks.slice(0, 5);
+      console.log(topBooks)
+  
+      res.status(200).json({ topBooks });
+    } catch (error) {
+      res.status(500).json({ error: 'Internal Server Error' });
+      console.log(error);
+    }
+  });
 
   
    //logout page

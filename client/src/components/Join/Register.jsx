@@ -11,15 +11,25 @@ export default function Register() {
     const [newUser, setNewUser] = useState({
         username:"", password:"", cpassword:""
     })
-    const handleRegisterChange=(e)=>{
-        const {name, value} = e.target;
-        setNewUser((prevUser)=>{
-            return{
-                ...prevUser, [name]:value
-            }
-        })
-    }
-
+    const handleRegisterChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'username') {
+          setNewUser((prevUser) => {
+            return {
+              ...prevUser,
+              [name]: value.toLowerCase() // Convert username to lowercase
+            };
+          });
+        } else {
+          setNewUser((prevUser) => {
+            return {
+              ...prevUser,
+              [name]: value
+            };
+          });
+        }
+      };
+      
     const postData = async(e)=>{
         e.preventDefault()
         const {username, password, cpassword} = newUser;
@@ -66,14 +76,15 @@ export default function Register() {
         username:"", password:""
     })
 
-    const handleLoginChange=(e)=>{
-        const {name, value} = e.target;
-        setUser((prevUser)=>{
-            return{
-                ...prevUser, [name]:value
-            }
-        })
-    }
+    const handleLoginChange = (e) => {
+        const { name, value } = e.target;
+        setUser((prevUser) => {
+          return {
+            ...prevUser,
+            [name]: name === 'username' ? value.toLowerCase() : value
+          };
+        });
+      };
 
     const postLoginData = async(e)=>{
         e.preventDefault()
@@ -131,7 +142,7 @@ export default function Register() {
             <div className=' border-b  hover:border-purple-500  p-5 flex gap-2 md:gap-4'>
                 <FaUser className='text-purple-400' />
                 <input className=' placeholder:text-slate-500 rounded-lg block bg-white font-thin text-black pl-3 md:text-2xl md:pl-9 md:pr-3  focus:outline-none focus:border-none '
-                placeholder="Username" type="text" onChange={handleRegisterChange} name="username" value={newUser.username}  />
+                placeholder="Username" type="email" onChange={handleRegisterChange} name="username" value={newUser.username}  />
 
             </div>
             <div className='border-b  hover:border-purple-500  p-5 flex gap-2 md:gap-4'>
@@ -161,7 +172,7 @@ export default function Register() {
                  <div className=' rounded-md  p-5 flex gap-2 md:gap-4 border-b  hover:border-purple-500'>
                 <FaUser className='text-purple-400' />
                 <input className=' placeholder:text-slate-500 rounded-lg block bg-white font-thin text-black pl-3 md:text-2xl md:pl-9 md:pr-3 focus:outline-none focus:border-none '
-                placeholder=" Username" type="text" onChange={handleLoginChange} name="username" value={user.username}  />
+                placeholder=" Username" type="email" onChange={handleLoginChange} name="username" value={user.username}  />
 
             </div>
                  <div className=' rounded-md  p-5 flex gap-2 md:gap-4 border-b  hover:border-purple-500'>

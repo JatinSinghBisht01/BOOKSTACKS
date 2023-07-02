@@ -14,6 +14,7 @@ import Footer from "./components/footer/Footer";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TopBooks from "./components/Charts/TopBooks";
 
 //1: contextApi
 export const UserContext = createContext();
@@ -182,6 +183,7 @@ export const notifyLoggedOut = ()=>{
       </Route>
       <Route exact path="join" element={<Join/>}/>
       <Route exact path="/user/books-borrowed" element={<UserDashboard />} />
+      <Route exact path="/books/mostpreffered" element={<TopBooks/>}/>
       <Route exact path="/user/logout" element={<Logout />} />
       <Route exact path="*" element={<Errorpage/>}/>
       </Routes>

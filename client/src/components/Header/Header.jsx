@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
 import SearchForm from '../SearchForm/SearchForm'
 
 export default function Header() {
@@ -17,8 +16,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-      
-
     </div>
     </>
   )

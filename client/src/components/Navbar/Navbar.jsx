@@ -36,6 +36,7 @@ export default function Navbar() {
         <>
         <Link to='book' className=' hover:text-pink-700'>HOME</Link>
             <Link to='about' className=' hover:text-pink-700'>ABOUT</Link>
+            <Link to='/books/mostpreffered' className=' hover:text-pink-700'>BEST SELLER</Link>
             <Link to='/user/books-borrowed' className=' hover:text-pink-700'>DASHBOARD</Link>
             <Link to='/user/logout' className=' hover:text-pink-700'>LOGOUT</Link>
         </>
@@ -46,6 +47,7 @@ export default function Navbar() {
         <>
         <Link to='book' className=' hover:text-pink-700'>HOME</Link>
             <Link to='about' className=' hover:text-pink-700'>ABOUT</Link>
+            <Link to='/books/mostpreffered' className=' hover:text-pink-700'>BEST SELLER</Link>
             <Link to='join' className=' hover:text-pink-700'>JOIN US</Link>
             </>
   
@@ -63,6 +65,9 @@ export default function Navbar() {
          
           <li className='my-5'>
              <Link to="about"  >ABOUT</Link>
+          </li>
+          <li className='my-5'>
+             <Link to="/books/mostpreffered" >BEST SELLER</Link>
           </li>
           <li className='my-5'>
              <Link to="/user/books-borrowed" >DASBOARD</Link>
@@ -83,6 +88,9 @@ export default function Navbar() {
          
           <li className='my-5'>
              <Link to="about"  >ABOUT</Link>
+          </li>
+          <li className='my-5'>
+             <Link to="/books/mostpreffered"  >BEST SELLER</Link>
           </li>
           <li className='my-5'>
              <Link to="join" >JOIN US</Link>
