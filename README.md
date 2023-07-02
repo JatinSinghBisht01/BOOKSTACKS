@@ -2,7 +2,7 @@
 
 BookStacks is a web application for managing and organizing your personal book collection. It allows you to keep track of the books you own, the books you've read, and the books you want to read. You can also discover new books, explore recommendations, and connect with other book enthusiasts.
 
-![BookStacks Preview](./preview.png)
+![BookStacks Preview](./client/src/images/preview.png)
 
 ## FEATURES
 
