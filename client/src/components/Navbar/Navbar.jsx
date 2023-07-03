@@ -22,7 +22,9 @@ export default function Navbar() {
 
         if (response.ok) {
           const { message } = await response.json();
-          setData(message);
+          setData(message)
+          dispatch({type:"USER", payload:true});
+
         }
       }
     };
@@ -31,7 +33,7 @@ export default function Navbar() {
   }, []);
 
   const NavMenu = () =>{
-    if(data || state){
+    if( state){
       return(
         <>
         <Link to='book' className=' hover:text-pink-700'>HOME</Link>
@@ -56,7 +58,7 @@ export default function Navbar() {
   }
 
   const SideMenu = ()=>{
-    if(data || state){
+    if(state){
       return (
         <>
          <li className='my-5'>

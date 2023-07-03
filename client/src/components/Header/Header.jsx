@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm/SearchForm'
 export default function Header() {
   return (
     <>
-    <div>
+    <div className=''>
       <div>
         {/* <Navbar/> */}
         <div className='text-center min-h-[100px] w-full bg-img h-fit  bg-center bg-cover bg-no-repeat ' >

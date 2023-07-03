@@ -1,9 +1,10 @@
 import React from 'react'
 import {AiOutlineMail} from 'react-icons/ai'
+import { notifySubscribed } from '../../App'
 export default function Footer() {
   return (
     <>
-    <div className='bg-black h-screen mt-20 text-gray-500 p-5 md:p-32'>
+    <div className='bg-black w-fit h-fit mt-20 text-gray-500 p-10 md:p-32'>
       <div className='grid md:grid-cols-2 gap-4'>
         <div>
           <h4 className='text-purple-400 font-bold text-xl mb-2 md:text-2xl md:mb-5'>BOOKSTACKS.</h4>
@@ -18,11 +19,11 @@ export default function Footer() {
           GET NOTIFIED
           </h4>
           <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia.<br/> Ut itaque enim optio ut excepturi deserunt <br/> iusto porro.</p>
-          <form className='flex gap-2 p-5'>
+          <div className='flex gap-2 p-5'>
               <AiOutlineMail className='text-white text-2xl mt-1'/>
               <input className=' placeholder:text-gray-500  bg-black pl-3  md:text-lg font-thin text-white  focus:outline-none ' placeholder='Email Address' type='email' name='email'></input>
-              <button className='bg-purple-500 text-white font-semibold py-2.5  px-5 md:px-10'>SUBSCRIBE</button>
-          </form>
+              <button onClick={notifySubscribed} className='bg-purple-500 text-white font-semibold py-2.5  px-5 md:px-10'>SUBSCRIBE</button>
+          </div>
           </div>
 
       </div>

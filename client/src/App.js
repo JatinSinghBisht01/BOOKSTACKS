@@ -32,6 +32,19 @@ export const notifyLogin = () => {
     });
 
 };
+export const notifyLoginnotFound = () => {
+  toast.error('Login to Borrow or Return Book', {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    });
+
+};
 export const notifyUserNotFound = () => {
   toast.info('User not Found', {
     position: "top-center",
@@ -169,6 +182,18 @@ export const notifyLoggedOut = ()=>{
     theme: "colored",
     });
 }
+export const notifySubscribed = ()=>{
+  toast.success('Thank you for subscribing our newsletter', {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    });
+}
 
 
   const Routing = ()=>{
@@ -199,9 +224,12 @@ function App() {
   return (
     <>
     <UserContext.Provider value={{state, dispatch}}>
-    <Navbar/>
+      <div className="w-fit h-fit">
+      <Navbar/>
     <Routing/>
     <Footer/>
+
+      </div>
     </UserContext.Provider>
     <ToastContainer
         position="top-center"

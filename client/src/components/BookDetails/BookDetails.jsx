@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import {FaArrowLeft} from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import {notifyBookAlreadyBorrowed, notifyBookadded, notifyBooknotborrowed, notifyBookreturned, notifyError} from "../../App"
+import {UserContext, notifyBookAlreadyBorrowed, notifyBookadded, notifyBooknotborrowed, notifyBookreturned, notifyError, notifyLoginnotFound} from "../../App"
 
 const URL = "https://openlibrary.org/works/";
 
 const BookDetails = () => {
+  const {state, dispatch} = useContext(UserContext)
   const {id} = useParams();
   const [loading, setLoading] = useState(false);
   const [book, setBook] = useState(null);
@@ -150,9 +151,9 @@ const BookDetails = () => {
             </div>
            <div className='flex gap-4'>
            <button className='my-5 p-2 px-4 rounded-md text-white font-semibold text-lg bg-purple-500 hover:bg-purple-800 transition ease-in-out delay-300 w-fit'
-              onClick={postRentalBook}>BORROW</button>
+              onClick={state?postRentalBook:notifyLoginnotFound}>BORROW</button>
            <button className='my-5 p-2 px-4 rounded-md text-white font-semibold text-lg bg-purple-500 hover:bg-purple-800 transition ease-in-out delay-300 w-fit'
-              onClick={returnRentedBook}>RETURN</button>
+              onClick={state?returnRentedBook:notifyLoginnotFound}>RETURN</button>
            </div>
            
           </div>
