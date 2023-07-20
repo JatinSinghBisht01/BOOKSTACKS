@@ -50,7 +50,7 @@ The application should now be running at `http://localhost:3000`.
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JSON Web Tokens (JWT)
-- **API Integration:** OpenLibrary API, Goodreads API
+- **API Integration:** OpenLibrary API
 
 ## CONTRIBUTING
 
